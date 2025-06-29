@@ -118,7 +118,7 @@ export default function Portfolio() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl sm:text-6xl font-bold mb-6">
-            Hello, I'm <span className="text-green-800">Hanji Kim</span>
+            Hello, I&apos;m <span className="text-green-800">Hanji Kim</span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
             사용자 경험을 깊이 이해하고, <br /> 접근성 높은 UI를 구현하는 김한지입니다.
