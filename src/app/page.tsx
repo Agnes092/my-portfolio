@@ -150,9 +150,9 @@ export default function Portfolio() {
               그 어떤 작업보다 깊은 몰입과 즐거움을 느꼈습니다. 사용자 중심의 디자인적 안목과 탄탄한 개발 역량을 겸비한 UI 전문가로 성장하기 위해 이 길을 선택했습니다.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-              현재 재직중인 회사에서 Next.js 14 및 React 18을 기반으로 TypeScript, Tailwind CSS, Recoil 등을 활용하여 B2B 통합 관리자 시스템의 프론트엔드 UI를 직접 구현현했습니다. 
+              현재 재직중인 회사에서 Next.js 14 및 React 18을 기반으로 TypeScript, Tailwind CSS, Recoil 등을 활용하여 B2B 통합 관리자 시스템의 프론트엔드 UI를 직접 구현했습니다. 
               <br />
-              더불어 개인 웹앱 프로젝트 'Hearing'에서 기획, 디자인부터 Next.js와 TypeScript로 프론트엔드를 구현하며 풀스택 시야를 넓혔습니다. AI 기반 디자인 툴 활용 및 노코드 툴(Bubble, Webflow, 아임웹) 퍼블리싱 경험까지 디자인과 개발의 경계를 넘나들며 사용자 경험을 완벽하게 구현하는 UI 전문가로 도약할 준비가 되어 있습니다.
+              더불어 개인 웹앱 프로젝트 &apos;Hearing&apos;에서 기획, 디자인부터 Next.js와 TypeScript로 프론트엔드를 구현하며 풀스택 시야를 넓혔습니다. AI 기반 디자인 툴 활용 및 노코드 툴(Bubble, Webflow, 아임웹) 퍼블리싱 경험까지 디자인과 개발의 경계를 넘나들며 사용자 경험을 완벽하게 구현하는 UI 전문가로 도약할 준비가 되어 있습니다.
               </p>
               <div className="flex flex-wrap gap-2">
                 {["HTML", "CSS","JavaScript", "TypeScript", "Next.js","React"].map((skill) => (

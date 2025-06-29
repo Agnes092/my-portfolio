@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { getProjectById } from "@/lib/projects";
+import Image from "next/image";
 
 export default function ProjectDetail() {
   const params = useParams();
@@ -91,10 +92,11 @@ export default function ProjectDetail() {
           {/* Project Images */}
           <div className="mb-12">
             <div className="relative aspect-video bg-gray-100 rounded-lg overflow-hidden mb-4">
-              <img
+              <Image
                 src={project.images[selectedImageIndex]}
                 alt={project.title}
-                className="w-full h-full object-contain transition-opacity duration-300"
+                fill
+                className="object-contain transition-opacity duration-300"
               />
               <div className="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded-md">
                 {selectedImageIndex + 1} / {project.images.length}
@@ -126,10 +128,11 @@ export default function ProjectDetail() {
                     selectedImageIndex === index ? "ring-2 ring-black ring-offset-2" : "opacity-60 hover:opacity-100"
                   }`}
                 >
-                  <img
+                  <Image
                     src={img}
                     alt={`${project.title} thumbnail ${index + 1}`}
-                    className="w-full h-full object-contain"
+                    fill
+                    className="object-contain"
                   />
                 </button>
               ))}
