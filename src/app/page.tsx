@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useRouter } from "next/navigation"
+import Link from "next/link"
+import Image from "next/image"
 import { ChevronDown, Github, Mail, Linkedin, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -12,29 +13,27 @@ export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("about")
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  const router = useRouter()
-
   const experiences = [
     {
-      title: "Senior Frontend Developer",
-      company: "Tech Company",
-      period: "2022 - Present",
+      title: "대리 / 기업부설연구소 디자인팀 (UX/UI 디자인 & UI 개발)",
+      company: "㈜비즈인사이트 ",
+      period: "2024.04 - 재직중",
       description:
-        "Led frontend development for multiple web applications using React and Next.js. Collaborated with design and backend teams to deliver high-quality user experiences.",
+        "B2B 멤버십 관리자 플랫폼 어드민: 기획부터 UX 설계, UI 디자인에 참여했으며, Next.js, React, TypeScript, Tailwind CSS 기반으로 프론트엔드 팀과 협력하여 UI를 개발했습니다. 사용자 워크플로우 분석을 통한 직관적인 어드민 UI 설계 및 실제 서비스에 적용되는 UI 컴포넌트 개발에 기여했습니다. 이밖에 디지털 헬스케어 앱 UX/UI 디자인 설계 보조 및 디자인 시스템 UI 작업에 참여했습니다.",
     },
     {
-      title: "Full Stack Developer",
-      company: "Startup Inc",
-      period: "2020 - 2022",
+      title: "선임 / 관리팀 (인사·총무·기획)",
+      company: "㈜훼밀리익스프레스",
+      period: "2021.08 - 2023.12",
       description:
-        "Developed and maintained full-stack applications using modern web technologies. Implemented CI/CD pipelines and improved application performance by 40%.",
+        "채용공고문 개편으로 지원자 5배 향상: 기업 브랜드와 MZ세대의 니즈를 반영한 UX 라이팅 기획 및 디자인으로 지원자를 증대시켰습니다.  이는 사용자 중심 사고와 커뮤니케이션 능력을 발휘한 성과입니다. 신입사원 Care 프로그램 기획으로 퇴사율 30% 감소 (50%→20%)에 기여했습니다. 사내벤처 육성 프로그램 기획/관리로 정부 자금 1억 원을 획득했습니다",
     },
     {
-      title: "Junior Developer",
-      company: "Digital Agency",
-      period: "2019 - 2020",
+      title: "주임 / 운영팀 (인사·총무·기획)",
+      company: "(사)장애인의 길벗 ",
+      period: "2019.12 - 2020.12",
       description:
-        "Started career developing responsive websites and learning modern JavaScript frameworks. Contributed to various client projects and internal tools.",
+        "2020년 장애인민주시민교육학교 1기 기획/운영: 데이터 기반 기획안 작성 및 전반적인 교육 관리를 통해 교육 활성화 및 기반 조성에 기여했습니다.",
     },
   ]
 
@@ -119,10 +118,10 @@ export default function Portfolio() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl sm:text-6xl font-bold mb-6">
-            Hello, I'm <span className="text-gray-600">Hanji Kim</span>
+            Hello, I'm <span className="text-green-800">Hanji Kim</span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            A passionate full-stack developer creating beautiful and functional web experiences
+            사용자 경험을 깊이 이해하고, <br /> 접근성 높은 UI를 구현하는 김한지입니다.
           </p>
           <div className="flex justify-center space-x-4">
             <Button variant="outline" size="lg" className="bg-black text-white hover:bg-gray-800">
@@ -147,15 +146,16 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-lg text-gray-600 mb-6">
-                I'm a passionate full-stack developer with over 5 years of experience in creating web applications that
-                combine beautiful design with robust functionality.
+              UX/UI 디자이너로서 사용자의 마음을 읽고 직관적인 경험을 설계해왔습니다. 이 과정에서 제가 직접 구상한 아이디어가 코드를 통해 실제 화면으로 생생하게 구현될 때,
+              그 어떤 작업보다 깊은 몰입과 즐거움을 느꼈습니다. 사용자 중심의 디자인적 안목과 탄탄한 개발 역량을 겸비한 UI 전문가로 성장하기 위해 이 길을 선택했습니다.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-                I specialize in modern JavaScript frameworks like React and Next.js, and I'm always eager to learn new
-                technologies and tackle challenging problems.
+              현재 재직중인 회사에서 Next.js 14 및 React 18을 기반으로 TypeScript, Tailwind CSS, Recoil 등을 활용하여 B2B 통합 관리자 시스템의 프론트엔드 UI를 직접 구현현했습니다. 
+              <br />
+              더불어 개인 웹앱 프로젝트 'Hearing'에서 기획, 디자인부터 Next.js와 TypeScript로 프론트엔드를 구현하며 풀스택 시야를 넓혔습니다. AI 기반 디자인 툴 활용 및 노코드 툴(Bubble, Webflow, 아임웹) 퍼블리싱 경험까지 디자인과 개발의 경계를 넘나들며 사용자 경험을 완벽하게 구현하는 UI 전문가로 도약할 준비가 되어 있습니다.
               </p>
               <div className="flex flex-wrap gap-2">
-                {["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Python", "PostgreSQL"].map((skill) => (
+                {["HTML", "CSS","JavaScript", "TypeScript", "Next.js","React"].map((skill) => (
                   <Badge key={skill} variant="outline" className="border-black text-black">
                     {skill}
                   </Badge>
@@ -163,8 +163,13 @@ export default function Portfolio() {
               </div>
             </div>
             <div className="flex justify-center">
-              <div className="w-64 h-64 bg-gray-200 rounded-full flex items-center justify-center">
-                <span className="text-gray-500">Profile Photo</span>
+              <div className="relative w-64 h-64 overflow-hidden rounded-full">
+                <Image
+                  src="/profile.png"
+                  alt="프로필 사진"
+                  fill
+                  className="object-contain"
+                />
               </div>
             </div>
           </div>
@@ -204,32 +209,31 @@ export default function Portfolio() {
           <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center">Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
-              <Card
-                key={project.id}
-                className="cursor-pointer transition-transform hover:scale-105 border-2 hover:border-black"
-                onClick={() => router.push(`/projects/${project.id}`)}
-              >
-                <div className="aspect-video bg-gray-200 rounded-t-lg overflow-hidden">
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="outline" className="border-black text-black text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
+              <Link key={project.id} href={`/projects/${project.id}`}>
+                <Card className="cursor-pointer transition-transform hover:scale-105 border-2 hover:border-black h-full flex flex-col">
+                  <div className="relative aspect-video rounded-t-lg overflow-hidden">
+                    <Image
+                      src={project.images[0] || "/placeholder.svg"}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
-                </CardContent>
-              </Card>
+                  <CardHeader>
+                    <CardTitle className="text-xl">{project.title}</CardTitle>
+                    <CardDescription>{project.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-black text-black">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>

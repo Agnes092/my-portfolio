@@ -1,7 +1,8 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { ArrowLeft, ExternalLink, Github, Calendar, User } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github, Calendar, User, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -12,8 +13,13 @@ export default function ProjectDetail() {
   const router = useRouter();
   const projectId = Number.parseInt(params.slug as string);
   const project = getProjectById(projectId);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  if (!project) {
+  useEffect(() => {
+    setSelectedImageIndex(0);
+  }, [projectId]);
+
+  if (!project || !project.images || project.images.length === 0) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
@@ -27,23 +33,25 @@ export default function ProjectDetail() {
     );
   }
 
+  const goToPrevious = () => {
+    setSelectedImageIndex((prevIndex) =>
+      prevIndex === 0 ? project.images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setSelectedImageIndex((prevIndex) =>
+      prevIndex === project.images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
   return (
     <div className="min-h-screen bg-white text-black">
       {/* Navigation */}
-      <nav className="sticky top-0 w-full bg-white/90 backdrop-blur-sm border-b border-gray-200 z-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center h-16">
-            <Button variant="ghost" onClick={() => router.push("/")} className="mr-4 hover:bg-gray-100">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Portfolio
-            </Button>
-            <div className="font-bold text-xl">Project Details</div>
-          </div>
-        </div>
-      </nav>
+      <div className="h-16"></div>
 
       {/* Project Header */}
-      <section className="pt-8 pb-12 px-4 sm:px-6 lg:px-8">
+      <section className="pt-16 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
             <h1 className="text-4xl sm:text-5xl font-bold mb-4">{project.title}</h1>
@@ -80,9 +88,52 @@ export default function ProjectDetail() {
             </div>
           </div>
 
-          {/* Project Image */}
-          <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden mb-12">
-            <img src={project.image || "/placeholder.svg"} alt={project.title} className="w-full h-full object-cover" />
+          {/* Project Images */}
+          <div className="mb-12">
+            <div className="relative aspect-video bg-gray-100 rounded-lg overflow-hidden mb-4">
+              <img
+                src={project.images[selectedImageIndex]}
+                alt={project.title}
+                className="w-full h-full object-contain transition-opacity duration-300"
+              />
+              <div className="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded-md">
+                {selectedImageIndex + 1} / {project.images.length}
+              </div>
+
+              {project.images.length > 1 && (
+                <>
+                  <button
+                    onClick={goToPrevious}
+                    className="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer bg-white/80 hover:bg-white hover:scale-110 active:scale-100 rounded-full p-2 transition-all duration-300 z-10 shadow-md"
+                  >
+                    <ChevronLeft className="h-5 w-5 text-gray-800" />
+                  </button>
+                  <button
+                    onClick={goToNext}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer bg-white/80 hover:bg-white hover:scale-110 active:scale-100 rounded-full p-2 transition-all duration-300 z-10 shadow-md"
+                  >
+                    <ChevronRight className="h-5 w-5 text-gray-800" />
+                  </button>
+                </>
+              )}
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {project.images.map((img, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedImageIndex(index)}
+                  className={`relative w-20 h-20 rounded-md cursor-pointer overflow-hidden focus:outline-none transition-all ${
+                    selectedImageIndex === index ? "ring-2 ring-black ring-offset-2" : "opacity-60 hover:opacity-100"
+                  }`}
+                >
+                  <img
+                    src={img}
+                    alt={`${project.title} thumbnail ${index + 1}`}
+                    className="w-full h-full object-contain"
+                  />
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -93,62 +144,20 @@ export default function ProjectDetail() {
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Project Overview</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 leading-relaxed">{project.fullDescription}</p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Key Features</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {project.features.map((feature, index) => (
-                      <li key={index} className="flex items-start">
-                        <div className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Technical Implementation</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-4">
-                    This project was built using modern web development practices and technologies to ensure
-                    scalability, maintainability, and optimal user experience.
-                  </p>
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <h4 className="font-semibold mb-2">Frontend</h4>
-                      <ul className="text-sm text-gray-600 space-y-1">
-                        {project.technologies
-                          .slice(0, Math.ceil(project.technologies.length / 2))
-                          .map((tech, index) => (
-                            <li key={index}>• {tech}</li>
-                          ))}
-                      </ul>
+              {project.sections.map((section, index) => (
+                <Card key={index}>
+                  <CardHeader>
+                    <CardTitle>{section.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-gray-600 leading-relaxed space-y-2">
+                      {section.content.split("\n").map((paragraph, pIndex) => (
+                        <p key={pIndex}>{paragraph}</p>
+                      ))}
                     </div>
-                    <div>
-                      <h4 className="font-semibold mb-2">Backend & Tools</h4>
-                      <ul className="text-sm text-gray-600 space-y-1">
-                        {project.technologies.slice(Math.ceil(project.technologies.length / 2)).map((tech, index) => (
-                          <li key={index}>• {tech}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
 
             {/* Sidebar */}
@@ -191,20 +200,6 @@ export default function ProjectDetail() {
                   <Button variant="outline" className="w-full border-black text-black hover:bg-gray-50">
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Live Demo
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Contact</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 text-sm mb-3">
-                    Interested in this project or want to discuss similar work?
-                  </p>
-                  <Button variant="outline" className="w-full border-black text-black hover:bg-gray-50">
-                    Get In Touch
                   </Button>
                 </CardContent>
               </Card>
