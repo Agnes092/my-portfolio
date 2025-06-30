@@ -70,7 +70,7 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-white text-black">
-      {/* Navigation */}
+      
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-sm border-b border-gray-200 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -124,14 +124,18 @@ export default function Portfolio() {
             사용자 경험을 깊이 이해하고, <br /> 접근성 높은 UI를 구현하는 김한지입니다.
           </p>
           <div className="flex justify-center space-x-4">
-            <Button variant="outline" size="lg" className="bg-black text-white hover:bg-gray-800">
-              <Mail className="w-4 h-4 mr-2" />
-              Contact Me
-            </Button>
-            <Button variant="outline" size="lg" className="bg-white text-black border-black hover:bg-gray-50">
-              <Github className="w-4 h-4 mr-2" />
-              GitHub
-            </Button>
+            <Link href="mailto:agneskim032@gmail.com">
+              <Button variant="outline" size="lg" className="bg-black text-white hover:bg-gray-800 cursor-pointer">
+                <Mail className="w-4 h-4 mr-2" />
+                Contact Me
+              </Button>
+            </Link>
+            <Link href="https://github.com/Agnes092" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className="bg-white text-black border-black hover:bg-gray-50 cursor-pointer">
+                <Github className="w-4 h-4 mr-2" />
+                GitHub
+              </Button>
+            </Link>
           </div>
           <div className="mt-16">
             <ChevronDown className="w-6 h-6 mx-auto animate-bounce text-gray-400" />
@@ -146,13 +150,10 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-lg text-gray-600 mb-6">
-              UX/UI 디자이너로서 사용자의 마음을 읽고 직관적인 경험을 설계해왔습니다. 이 과정에서 제가 직접 구상한 아이디어가 코드를 통해 실제 화면으로 생생하게 구현될 때,
-              그 어떤 작업보다 깊은 몰입과 즐거움을 느꼈습니다. 사용자 중심의 디자인적 안목과 탄탄한 개발 역량을 겸비한 UI 전문가로 성장하기 위해 이 길을 선택했습니다.
+                UX/UI 디자이너로서 사용자의 마음을 읽고 직관적인 경험을 설계해왔습니다. 이 과정에서 제가 직접 구상한 아이디어가 <strong>HTML, CSS, JavaScript 코드를 통해 실제 화면</strong>으로 생생하게 구현될 때, 그 어떤 작업보다 깊은 몰입과 즐거움을 느꼈습니다. 디자인에 대한 통찰력과 개발 구현의 즐거움을 겸비한, <strong>사용자 중심의 UI 개발 전문가로 성장</strong>하고자 이 길을 선택했습니다.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-              현재 재직중인 회사에서 Next.js 14 및 React 18을 기반으로 TypeScript, Tailwind CSS, Recoil 등을 활용하여 B2B 통합 관리자 시스템의 프론트엔드 UI를 직접 구현했습니다. 
-              <br />
-              더불어 개인 웹앱 프로젝트 &apos;Hearing&apos;에서 기획, 디자인부터 Next.js와 TypeScript로 프론트엔드를 구현하며 풀스택 시야를 넓혔습니다. AI 기반 디자인 툴 활용 및 노코드 툴(Bubble, Webflow, 아임웹) 퍼블리싱 경험까지 디자인과 개발의 경계를 넘나들며 사용자 경험을 완벽하게 구현하는 UI 전문가로 도약할 준비가 되어 있습니다.
+                현재는 AI 기반 디자인 툴을 활용한 <strong>효율적인 콘텐츠 생성</strong>부터 <strong>UI 컴포넌트 개발 및 웹/앱 프론트엔드 구현</strong> (HTML/CSS/JS, React 기반), 나아가 Bubble, Webflow, 아임웹 등 노코드 툴 퍼블리싱까지 다양한 UI 구현 경험을 쌓고 있습니다. 이러한 실무 경험을 바탕으로, 제 디자인적 안목에 견고한 개발 역량을 더해 <strong>사용자 경험을 완벽하게 구현하는 UI 전문가</strong>로 도약할 준비가 되어 있습니다.
               </p>
               <div className="flex flex-wrap gap-2">
                 {["HTML", "CSS","JavaScript", "TypeScript", "Next.js","React"].map((skill) => (
@@ -242,18 +243,7 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-gray-200">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="flex justify-center space-x-6 mb-6">
-            <Button variant="ghost" size="sm">
-              <Mail className="w-5 h-5" />
-            </Button>
-            <Button variant="ghost" size="sm">
-              <Github className="w-5 h-5" />
-            </Button>
-            <Button variant="ghost" size="sm">
-              <Linkedin className="w-5 h-5" />
-            </Button>
-          </div>
-          <p className="text-gray-600">© 2024 Hanji Kim. All rights reserved.</p>
+          <p className="text-gray-600">© 2025 Hanji Kim. All rights reserved.</p>
         </div>
       </footer>
     </div>

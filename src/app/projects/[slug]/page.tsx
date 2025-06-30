@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { getProjectById } from "@/lib/projects";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProjectDetail() {
   const params = useParams();
@@ -78,14 +79,22 @@ export default function ProjectDetail() {
             </div>
 
             <div className="flex space-x-4">
-              <Button className="bg-black text-white hover:bg-gray-800">
-                <Github className="w-4 h-4 mr-2" />
-                View Code
-              </Button>
-              <Button variant="outline" className="border-black text-black hover:bg-gray-50">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Live Demo
-              </Button>
+              {project.githubUrl && (
+                <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-black text-white hover:bg-gray-800 cursor-pointer">
+                    <Github className="w-4 h-4 mr-2" />
+                    View Code
+                  </Button>
+                </Link>
+              )}
+              {project.demoUrl && (
+                <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="border-black text-black hover:bg-gray-50 cursor-pointer">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Live Demo
+                  </Button>
+                </Link>
+              )}
             </div>
           </div>
 
@@ -155,7 +164,7 @@ export default function ProjectDetail() {
                   <CardContent>
                     <div className="text-gray-600 leading-relaxed space-y-2">
                       {section.content.split("\n").map((paragraph, pIndex) => (
-                        <p key={pIndex}>{paragraph}</p>
+                        <p key={pIndex} dangerouslySetInnerHTML={{ __html: paragraph }} />
                       ))}
                     </div>
                   </CardContent>
@@ -188,22 +197,6 @@ export default function ProjectDetail() {
                       ))}
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Links</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <Button className="w-full bg-black text-white hover:bg-gray-800">
-                    <Github className="w-4 h-4 mr-2" />
-                    View Source Code
-                  </Button>
-                  <Button variant="outline" className="w-full border-black text-black hover:bg-gray-50">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
-                  </Button>
                 </CardContent>
               </Card>
             </div>
