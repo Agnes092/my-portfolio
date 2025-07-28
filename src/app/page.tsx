@@ -21,20 +21,6 @@ export default function Portfolio() {
       description:
         "B2B 멤버십 관리자 플랫폼 어드민: 기획부터 UX 설계, UI 디자인에 참여했으며, Next.js, React, TypeScript, Tailwind CSS 기반으로 프론트엔드 팀과 협력하여 UI를 개발했습니다. 사용자 워크플로우 분석을 통한 직관적인 어드민 UI 설계 및 실제 서비스에 적용되는 UI 컴포넌트 개발에 기여했습니다. 이밖에 디지털 헬스케어 앱 UX/UI 디자인 설계 보조 및 디자인 시스템 UI 작업에 참여했습니다.",
     },
-    {
-      title: "선임 / 관리팀 (인사·총무·기획)",
-      company: "㈜훼밀리익스프레스",
-      period: "2021.08 - 2023.12",
-      description:
-        "채용공고문 개편으로 지원자 5배 향상: 기업 브랜드와 MZ세대의 니즈를 반영한 UX 라이팅 기획 및 디자인으로 지원자를 증대시켰습니다.  이는 사용자 중심 사고와 커뮤니케이션 능력을 발휘한 성과입니다. 신입사원 Care 프로그램 기획으로 퇴사율 30% 감소 (50%→20%)에 기여했습니다. 사내벤처 육성 프로그램 기획/관리로 정부 자금 1억 원을 획득했습니다",
-    },
-    {
-      title: "주임 / 운영팀 (인사·총무·기획)",
-      company: "(사)장애인의 길벗 ",
-      period: "2019.12 - 2020.12",
-      description:
-        "2020년 장애인민주시민교육학교 1기 기획/운영: 데이터 기반 기획안 작성 및 전반적인 교육 관리를 통해 교육 활성화 및 기반 조성에 기여했습니다.",
-    },
   ]
 
   useEffect(() => {
@@ -150,10 +136,10 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-lg text-gray-600 mb-6">
-                UX/UI 디자이너로서 사용자의 마음을 읽고 직관적인 경험을 설계해왔습니다. 이 과정에서 제가 직접 구상한 아이디어가 <strong>HTML, CSS, JavaScript 코드를 통해 실제 화면</strong>으로 생생하게 구현될 때, 그 어떤 작업보다 깊은 몰입과 즐거움을 느꼈습니다. 디자인에 대한 통찰력과 개발 구현의 즐거움을 겸비한, <strong>사용자 중심의 UI 개발 전문가로 성장</strong>하고자 이 길을 선택했습니다.
+                UX/UI 디자이너로서 사용자의 마음을 읽고 직관적인 경험을 설계해왔습니다. 이 과정에서 제가 직접 구상한 아이디어가 <strong>HTML, CSS, JavaScript 코드를 통해 실제 화면</strong>으로 생생하게 구현될 때, 그 어떤 작업보다 깊은 몰입과 즐거움을 느꼈습니다. 디자인에 대한 통찰력과 개발 구현의 즐거움을 겸비한, <strong>사용자 중심의 개발 전문가로 성장</strong>하고자 이 길을 선택했습니다.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-                현재는 AI 기반 디자인 툴을 활용한 <strong>효율적인 콘텐츠 생성</strong>부터 <strong>UI 컴포넌트 개발 및 웹/앱 프론트엔드 구현</strong> (HTML/CSS/JS, React 기반), 나아가 Bubble, Webflow, 아임웹 등 노코드 툴 퍼블리싱까지 다양한 UI 구현 경험을 쌓고 있습니다. 이러한 실무 경험을 바탕으로, 제 디자인적 안목에 견고한 개발 역량을 더해 <strong>사용자 경험을 완벽하게 구현하는 UI 전문가</strong>로 도약할 준비가 되어 있습니다.
+                현재는 AI 기반 디자인 툴을 활용한 <strong>효율적인 콘텐츠 생성</strong>부터 <strong>UI 컴포넌트 개발 및 웹/앱 프론트엔드 구현</strong> (HTML/CSS/JS, React 기반), 나아가 Bubble, Webflow, 아임웹 등 노코드 툴 퍼블리싱까지 다양한 UI 구현 경험을 쌓고 있습니다. 이러한 실무 경험을 바탕으로, 제 디자인적 안목에 견고한 개발 역량을 더해 <strong>사용자 경험을 완벽하게 구현하는 전문가</strong>로 도약할 준비가 되어 있습니다.
               </p>
               <div className="flex flex-wrap gap-2">
                 {["HTML", "CSS","JavaScript", "TypeScript", "Next.js","React"].map((skill) => (
@@ -164,12 +150,12 @@ export default function Portfolio() {
               </div>
             </div>
             <div className="flex justify-center">
-              <div className="relative w-64 h-64 overflow-hidden rounded-full">
+              <div className="relative w-[280px] h-[280px] overflow-hidden rounded-full">
                 <Image
                   src="/profile.png"
                   alt="프로필 사진"
                   fill
-                  className="object-contain"
+                  className="object-cover"
                 />
               </div>
             </div>
