@@ -5,7 +5,6 @@ export const projects = [
     description: "한국 근현대사를 시각적으로 탐색하고 학습할 수 있는 웹 애플리케이션",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     githubUrl: "https://github.com/team-hearing/hearing-frontend",
-    demoUrl: "https://hearing-project.vercel.app/",
     images: [
       "/hearing-gallery-1.png",
       "/hearing-gallery-2.png",
@@ -30,7 +29,7 @@ export const projects = [
       {
         title: "Key Features",
         content:
-          "- <strong>인터랙티브 타임라인</strong>: 특정 시대의 사건을 시각적이고 직관적으로 탐색할 수 있는 UI/UX 설계\n- <strong>한국사와 세계사 연동</strong>: 한국사 사건과 연관된 세계사 주요 사건 정보를 함께 제공하여 폭넓은 이해 도모\n- <strong>사용자 중심 정보 탐색</strong>: 시각적 요소와 인터랙션을 통해 몰입감 있는 학습 경험 제공",
+          "- <strong>인터랙티브 타임라인</strong>: 특정 시대의 사건을 시각적이고 직관적으로 탐색할 수 있는 UI/UX 설계\n- <strong>한국사와 세계사 연동</strong>: 한국사 사건과 연관된 세계사 주요 사건 정보를 함께 제공하여 폭넓은 이해 도모\n- <strong> 정보 탐색</strong>: 시각적 요소와 인터랙션을 통해 학습 경험 제공",
       },
     ],
   },
@@ -39,8 +38,6 @@ export const projects = [
     title: "B2B 통합관리자",
     description: "어시스턴스 사업 운영을 위한 통합 관리자 시스템 구축 프로젝트",
     tags: ["React", "Vite", "Zustand"],
-    githubUrl: "https://github.com/Agnes092/B2B-DashBoard",
-    demoUrl: "https://b2b-dash-board.vercel.app/",
     images: [
       "/b2b-gallery (1).png",
       "/b2b-gallery (2).png",
@@ -63,7 +60,7 @@ export const projects = [
       {
         title: "Key Features",
         content:
-          "- <strong>통합 대시보드</strong>: 어시스턴스 사업 전반을 효율적으로 관리할 수 있는 대시보드 구축\n- <strong>가입자/고객사/상품 관리</strong>: 직관적인 UI/UX로 고객 및 멤버십 정보를 등록/조회/수정할 수 있는 기능 제공\n- <strong>최신 기술 스택</strong>: Next.js 14 기반의 프론트엔드 기술로 확장성과 유지보수성 확보",
+          "- <strong>UX/UI 화면 설계 </strong>: 사용자 경험에 대한 이해를 바탕으로 접근성 높은 UI 구현\n- <strong>디자인 스타일 변경 및 유지보수성 향상</strong>: 기존의 블루 중심 컬러를 흑백 스타일로 전환하여 디자인을 단순화하고 아이콘으로 교체하여 유지보수가 용이한 환경을 제공\n- <strong>통합 데이터 및 정보 관리 시스템</strong>:  상품에 대한 정보를 효율적으로 등록, 조회, 수정, 관리할 수 있는 기능을 제공하여 B2B 비즈니스 운영의 핵심적인 역할을 수행하며 운영팀이 전체적으로 서비스를 운영할 수 있도록 지원",
       },
     ],
   },
@@ -72,7 +69,6 @@ export const projects = [
     title: "Peerfect",
     description: "IT 분야 독학러들의 메타인지 능력 향상과 학습 경험 공유를 위한 웹 서비스",
     tags: ["SvelteKit", "TypeScript"],
-    githubUrl: "https://github.com/Agnes092/Peerfect",
     demoUrl: "https://www.peerfect.kr/",
     images: [
       "/peerfect-gallery (1).png",
@@ -106,8 +102,6 @@ export const projects = [
     title: "UI: personal project",
     description: "다양한 서비스 도메인의 핵심 UI 화면을 기획하고 디자인한 개인 프로젝트",
     tags: ["SvelteKit", "TypeScript"],
-    githubUrl: "https://github.com/Agnes092/UI-Project",
-    demoUrl: "https://ui-project-demo.vercel.app/",
     images: [
       "/ui-gallery (1).jpg",
       "/ui-gallery (2).jpg",

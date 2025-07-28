@@ -19,7 +19,31 @@ export default function Portfolio() {
       company: "㈜비즈인사이트 ",
       period: "2024.04 - 재직중",
       description:
-        "B2B 멤버십 관리자 플랫폼 어드민: 기획부터 UX 설계, UI 디자인에 참여했으며, Next.js, React, TypeScript, Tailwind CSS 기반으로 프론트엔드 팀과 협력하여 UI를 개발했습니다. 사용자 워크플로우 분석을 통한 직관적인 어드민 UI 설계 및 실제 서비스에 적용되는 UI 컴포넌트 개발에 기여했습니다. 이밖에 디지털 헬스케어 앱 UX/UI 디자인 설계 보조 및 디자인 시스템 UI 작업에 참여했습니다.",
+        `<strong>1. Technical Skills</strong><br/>
+- Languages: TypeScript, JavaScript<br/>
+- Frameworks & Libraries: Next.js, React<br/>
+- Styling: Tailwind CSS, CSS-in-JS<br/>
+- State Management: React Query<br/>
+- Prototyping & No-code: Bubble, Imweb, Figma Make, V0, 21 magic mcp, Magicpath<br/>
+- Productivity & AI: Claude, Gemini, Grok, ChatGPT, Perplexity<br/>
+- Etc: UI/UX Design Principles, QA (Quality Assurance)<br/><br/>
+
+<strong>2. Work Experience & Projects</strong><br/>
+1) B2B 멤버십 관리자 플랫폼 프론트엔드 시스템 개편<br/>
+(1) 디자인 시스템 현대화 및 개발 생산성 향상<br/>
+- Font Awesome을 경량화된 Lucide 아이콘으로 교체하여 번들 사이즈를 줄이고 초기 렌더링 성능 개선<br/><br/>
+
+2) 신규 서비스 UI 개발 및 프로토타이핑<br/>
+(1) 직관적인 UI/UX 기획 및 설계를 바탕으로 웹 UI를 직접 퍼블리싱<br/><br/>
+(2) No-code 툴을 활용한 빠른 MVP 구축<br/>
+- Bubble, Imweb 등의 노코드 툴을 활용해 아이디어를 신속하게 웹 페이지 구현, 초기 사용자 피드백을 빠르게 수집하여 제품 개발 방향성에 기여<br/><br/>
+
+<strong>3. 개발 문화 및 프로세스 기여</strong><br/>
+1) AI 개발 도구를 활용한 생산성 극대화<br/>
+- Cursor을 활용해 코드 작성, 리팩토링 등 개발 시간을 단축<br/>
+- Gemini를 복잡한 로직 구현이나 새로운 기술 리서치, 디버깅 과정에 활용하여 문제 해결 능력을 높임<br/><br/>
+2) 사용자 중심의 품질 개선 활동<br/>
+- 서비스 안정성 확보를 위해 사용자 시나리오 기반의 QA를 직접 수행하며 버그를 발견하고 개선하는 데 참여`,
     },
   ]
 
@@ -182,7 +206,7 @@ export default function Portfolio() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">{exp.description}</p>
+                  <p className="text-gray-600" dangerouslySetInnerHTML={{ __html: exp.description }} />
                 </CardContent>
               </Card>
             ))}
